@@ -5,7 +5,7 @@ export default {
     devtool: 'inline-source-map',
     // noInfo: false,
     entry: [
-        path.resolve(__dirname, 'src/index.html')
+        path.resolve(__dirname, 'src/index')
     ],
     target: 'web',
     output: {
@@ -17,8 +17,8 @@ export default {
     module: {
         rules: [
             { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
-            { test: /\.css$/, loaders: ['style', 'css'] },
-            { test: /\.html$/, loaders: ['html-loader'] }
+            { test: /\.css$/, loaders: ['style', 'css'] }
+            // { test: /\.html$/, loaders: ['html-loader'] }
         ]
     }
 }
