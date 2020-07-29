@@ -1,11 +1,11 @@
 import path from 'path';
 
 export default {
-    debug: true,
+    mode: 'development',
     devtool: 'inline-source-map',
-    noInfo: false,
+    // noInfo: false,
     entry: [
-        path.resolve(__dirname, 'src/index')
+        path.resolve(__dirname, 'src/index.html')
     ],
     target: 'web',
     output: {
@@ -15,9 +15,10 @@ export default {
     },
     plugins: [],
     module: {
-        loaders: [
-            { test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
-            { test: /\.css$/, loaders: ['style', 'css'] }
+        rules: [
+            { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
+            { test: /\.css$/, loaders: ['style', 'css'] },
+            { test: /\.html$/, loaders: ['html-loader'] }
         ]
     }
 }
