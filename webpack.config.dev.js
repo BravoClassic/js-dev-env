@@ -1,7 +1,7 @@
 import path from 'path';
 
 export default {
-    mode: 'development',
+    // debug: true,
     devtool: 'inline-source-map',
     // noInfo: false,
     entry: [
@@ -16,7 +16,7 @@ export default {
     plugins: [],
     module: {
         rules: [
-            { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
+            { test: /\.js$/, exclude: /node_modules/, loaders: 'babel-loader' },
             { test: /\.css$/, loaders: ['style', 'css'] }
             // { test: /\.html$/, loaders: ['html-loader'] }
         ]
