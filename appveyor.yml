@@ -5,14 +5,14 @@ environment:
   - nodejs_version: "12"
 
 #Install scripts. (runs after repo cloning)
-  install:
+install:
     #Get the latest stable version of Node.js or io.js
     - ps: "Install-Product node $env:nodejs_version"
     #Install modules
     - npm install
 
 #Post-install test scripts.
-  test_script:
+test_script:
   #Output useful info for debugging.
   - node --version
   - npm --version
